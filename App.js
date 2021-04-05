@@ -1,33 +1,15 @@
 import React, {Component} from 'react';
 import {
-  StyleSheet, 
+  StyleSheet,
+  FlatList, 
   Text, 
   View, 
-  Image} from 'react-native';
+  Image,
+  TouchableOpacity} from 'react-native';
 import AgeValidator from './app/componentes/ageValidator/AgeValidator';
-import myList from './app/componentes/myList/myList';
-
-const lista = [
-  {
-    id: 1,
-    img: 'Arequipa',
-    descripcion: '',
-  },
-  {
-    id: 2,
-    img: 'Arequipa',
-    descripcion: '',
-  },
-  {
-    id: 3,
-    img: 'Arequipa',
-    descripcion: '',
-  },
-];
+import MyList from './app/componentes/myList/MyList';
 
 export default class App extends Component{
-  
-
   render() {
     return (
       <View style={styles.container}>
@@ -38,13 +20,15 @@ export default class App extends Component{
 
         <AgeValidator/>
 
+        <MyList/>
+
       </View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
+    backgroundColor:'coral',
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10,

@@ -35,8 +35,8 @@ class AgeValidator extends Component {
         return(
             <View style={styles.container}>
                 <TextInput
-                style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-                placeholder="solo ingrese valores numericos"
+                style={{height: 40, borderColor: 'gray', borderWidth: 1, backgroundColor: '#FFA794'}}
+                placeholder="Ingrese sus valores"
                 keyboardType='numeric'
                 onChangeText={text => this.onChanged(text)}
                 />
