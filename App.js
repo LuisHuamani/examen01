@@ -1,40 +1,22 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  FlatList, 
-  Text, 
-  View, 
-  Image,
-  TouchableOpacity} from 'react-native';
-import AgeValidator from './app/componentes/ageValidator/AgeValidator';
-import MyList from './app/componentes/myList/MyList';
+import { StyleSheet, View } from 'react-native';
 
-export default class App extends Component{
-  render() {
-    return (
-      <View style={styles.container}>
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ConexionFetch from './app/componentes/conexionFetch/ConexionFetch';
+import Detalles from './app/componentes/Detalles/Detalles';
 
-        <View style={styles.text}>
-          <Text> Ingrese su edad </Text>
-        </View>
+const Stack = createStackNavigator();
 
-        <AgeValidator/>
-
-        <MyList/>
-
-      </View>
-    );
-  }
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ConexionFetch">
+        <Stack.Screen name="Peliculas" component={ConexionFetch}/>
+        <Stack.Screen name="Detalles" component={Detalles} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor:'coral',
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-  },
-  text: {
-    alignItems: 'center',
-    padding: 5,
-  },
-});
+
+export default App;
